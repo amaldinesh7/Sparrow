@@ -21,3 +21,13 @@ ALTER ROLE postgres WITH PASSWORD 'pass';
 
 Create table users(name varchar(50) NOT NULL,email varchar(50), phone bigint PRIMARY KEY, dob date NOT NULL);
 insert into users values('Amal','amalkdinesh@gmail.com', 9745597425, '1999-07-16');
+
+
+
+
+#basic commands to follow for this project
+
+sudo su - postgres
+psql
+\c surveysparrow
+*table is users and postgres is user*
