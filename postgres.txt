@@ -1,0 +1,23 @@
+#Entering into postgres
+
+sudo su - postgres
+psql
+
+#Commands
+
+\d  -- show tables
+\l  -- show databases
+\du -- show users
+\c  -- use that database
+\q  -- exit
+
+
+#Queries Used
+ALTER ROLE postgres WITH PASSWORD 'pass';
+
+
+
+#Creating User Table
+
+Create table users(name varchar(50) NOT NULL,email varchar(50), phone bigint PRIMARY KEY, dob date NOT NULL);
+insert into users values('Amal','amalkdinesh@gmail.com', 9745597425, '1999-07-16');
