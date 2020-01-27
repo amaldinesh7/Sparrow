@@ -1,23 +1,18 @@
-'use strict';
+//  'use strict';
 
 const Hapi = require('@hapi/hapi');
+const {configureRoutes} = require('./routes')
 
-const init = async () => {
+
+const init = async () => 
+{
 
     const server = Hapi.server({
-        port: 5000,
+        port: 9000,
         host: 'localhost'
     });
 
-    server.route({
-        method: 'GET',
-        path: '/',
-        handler: (request, h) => {
-
-            return 'Hello World! This is amaldinesh';
-        }
-    });
-
+    await configureRoutes(server)
     await server.start();
     console.log('Server running on %s', server.info.uri);
 };
