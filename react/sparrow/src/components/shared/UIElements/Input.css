@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli:200,300,400,500,600,700,800,900&display=swap');
+.form-control {
+  margin: 1rem .5rem 1rem .5rem;
+}
+
+.form-control label,
+.form-control input{
+  display: block;
+}
+
+.form-control label {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Muli', sans-serif !important;
+  margin-bottom: 0.5rem;
+  color : #555
+
+}
+
+.form-control input {
+  width: 100%;
+  font-family: 'Muli',sans-serif ;
+  font-size: 22px;
+  font-weight: 600;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  padding: .5rem 1rem .5rem 1rem;
+  border-radius: 5px;
+}
+
+.form-control input[type=number]::-webkit-outer-spin-button,
+.form-control input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.form-control input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  outline: none;
+  background: #ebebeb;
+  border-color: #510077;
+}
+
+.form-control--invalid label,
+.form-control--invalid p {
+  color: red;
+}
+
+.form-control--invalid input{
+  border-color: red;
+  background: #ffd1d1;
+}

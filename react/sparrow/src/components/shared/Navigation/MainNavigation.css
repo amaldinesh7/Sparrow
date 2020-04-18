@@ -1,0 +1,19 @@
+
+  .main-navigation__title {
+    color: white;
+    font-size: 2.4rem;
+  }
+  
+  .main-navigation__title a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .main-navigation__header-nav {
+    display: none;
+  }
+
+  .nav-bar{
+    width: 90%;
+  }
+  

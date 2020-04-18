@@ -8,8 +8,11 @@ const init = async () =>
 {
 
     const server = Hapi.server({
-        port: 9000,
-        host: 'localhost'
+        port: 80,
+        host: 'localhost',
+        routes: {
+            cors: true
+        }
     });
 
     await configureRoutes(server)

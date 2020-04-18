@@ -19,16 +19,32 @@ exports.configureRoutes = (server) => {
         method:'PUT',
         path:'/models',
         handler: (req) => {
+
+            return Model.Temps.update({
+                name : req.payload.name,
+                email: req.payload.email,
+                phone: req.payload.phone,
+                dob: req.payload.dob
+              }, {
+                where: {
+                  phone: req.payload.id
+                }
+              }).then(ans => {
+                  if (ans[0]){
+                      return "Successfully Updated!";
+                  }
+                  else{
+                      return "Updation failed !";
+                  }
+              })
             
-            return Model.Temps.findAll()
-        }
+            }     
         
     }, {
         method:'DELETE',
-        path:'/models',
+        path:'/models/{uId}',
         handler: (req) => {
-
-            var ph = req.query.phone;
+            var ph = req.params.uId;
             return Model.Temps.destroy({
                 where: { phone : ph }
               })
@@ -43,10 +59,10 @@ exports.configureRoutes = (server) => {
         
     }, {
         method:'GET',
-        path:'/models/phone',
+        path:'/models/{id}',
         handler: (req) => {
 
-            var ph = req.query.phone;
+            var ph = req.params.id[1];
            return Model.Temps.findAll({
                 where: { phone : ph }
               })

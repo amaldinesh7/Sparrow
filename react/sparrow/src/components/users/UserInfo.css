@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
+.user-info {
+    margin: 1rem 0;
+  }
+  
+  .user-info__content {
+    padding: 0;
+  }
+  
+  .user-info__info {
+    padding: 1rem;
+  }
+
+  .user-info__info h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif !important;
+    padding-left: 1.2rem;
+    padding-top: .5rem;
+  }
+
+  .user-info__info h2 {
+    font-size: 22px;
+    color: #565656;
+    padding-left:2.7rem;
+    font-family: 'Work Sans', sans-serif !important;
+    font-weight: 400;
+}
+
+.colon1 {
+    padding-left: .9rem;
+    padding-right: 1rem;
+}
+.colon2 {
+    padding-left: 2.2rem;
+    padding-right: 1rem;
+}
+.colon3 {
+    padding-left: 1.4rem;
+    padding-right: 1rem;
+}
+    
+  
+  .user-info__info h1,
+  .user-info__info h2,
+  .user-info__info p {
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .user-info__actions {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #ccc;
+  }
+  
+  .user-info__modal-content {
+    padding: 0;
+  }
+  
+  .user-info__modal-actions {
+    text-align: right;
+  }
+  
+  .user-info__actions button,
+  .user-info__actions a {
+    margin: 0.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .user-info__image {
+      height: 20rem;
+    } 
+  }
