@@ -1,33 +1,36 @@
 import React from "react";
+import axios from 'axios';
 
 import UsersList from "../components/users/UsersList";
+// import { render } from "@testing-library/react";
 
-const Users = () => {
-	const USERS = [
-        {
-            id:'9745597425',
-            name:'Amal Dinesh'
+class Users extends React.Component {
+    state = { users:[] }
 
-        },
-        {
-            id:'7012290437',
-            name:'Aparna Satheesh'
+    fetchUsers = () => {
+        axios.get('http://localhost:81/models')
+              .then(response => {
+                const tempUsers = Array.from(response.data);
+                for (var j = 0; j < tempUsers.length; j++){
+                  tempUsers[j].id = tempUsers[j].phone;
+                  }
+                this.setState({users:Array.from(tempUsers)});
+              })
+              .catch(error => {
+                console.log(error);
+              });
+      };
 
-        },
-        {
-            id:'9994599945',
-            name:'Aswin A'
+    componentDidMount(){
+        this.fetchUsers()
+    }
 
-        },
-        {
-            id:'9947889947',
-            name:'Alba Terese Baby'
-
-        }
-
-    ];
-
-	return <UsersList items={USERS} />;
-};
+    render(){
+        return (
+             <UsersList items={this.state.users} />
+        );
+    }
+    
+}
 
 export default Users;

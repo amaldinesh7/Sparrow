@@ -23,6 +23,8 @@ const UserInfo = props => {
     const confirmDeleteHandler = () => {
         axios.delete(`http://localhost:80/models/${uId}`)
           .then(function (response) {
+              //Temporary Setup - Nedd to show deleted Successfully
+            setShowConfirmModal(false);
             console.log(response);
           })
           .catch(function (error) {

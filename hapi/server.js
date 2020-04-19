@@ -1,14 +1,14 @@
 //  'use strict';
 
 const Hapi = require('@hapi/hapi');
-const {configureRoutes} = require('./routes')
+const {configureRoutes} = require('./src/routes/routes');
 
 
 const init = async () => 
 {
 
     const server = Hapi.server({
-        port: 80,
+        port: 81,
         host: 'localhost',
         routes: {
             cors: true

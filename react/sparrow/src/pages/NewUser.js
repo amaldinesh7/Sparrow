@@ -11,7 +11,7 @@ class NewUser extends React.Component {
 
     userSubmitHandler = event => {
         event.preventDefault();
-        axios.post('http://localhost:80/models', {
+        axios.post('http://localhost:81/models', {
             name: this.state.name,
             email: this.state.email,
             phone: this.state.phone,
