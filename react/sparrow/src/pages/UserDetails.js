@@ -11,7 +11,7 @@ class UserDetails extends React.Component{
     uId = this.props.match.params.id;
 
     fetchUsers = () => {
-        axios.get(`http://localhost:81/models/${this.uId}`)
+        axios.get(`http://localhost:80/models/${this.uId}`)
               .then(response => {
                 const tempUsers = Array.from(response.data);
                 for (var j = 0; j < tempUsers.length; j++){

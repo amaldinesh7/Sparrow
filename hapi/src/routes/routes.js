@@ -4,6 +4,32 @@ const controllers = require('../controllers/index')
 
 exports.configureRoutes = (server) => {
     return server.route([{
+        // Google Auth Api
+        method: '*',
+        path: '/bell/door',
+        options: {
+            auth: {
+                strategy: 'google',
+                mode: 'try'
+            },
+        handler: function (request, h) {
+            if (!request.auth.isAuthenticated) {
+                return 'Authentication failed due to: ' + request.auth.error.message;
+            }
+                // return '<pre>' + JSON.stringify(request.auth.credentials, null, 4) + '</pre>';
+                return h.redirect('http://localhost:80/bell/door');
+            }
+        }
+    },{
+        // User Creation API
+        method:'GET',
+        path:'/callback',
+        handler: function (request,h) {
+            return "success!"
+        }
+        
+    },{
+        // User Creation API
         method:'POST',
         path:'/models',
         handler: controllers.createUser.createUser,

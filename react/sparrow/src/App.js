@@ -7,18 +7,22 @@ import UserDetails from './pages/UserDetails';
 import UpdateUser from './pages/UpdateUser';
 import MainNavigation from './components/shared/Navigation/MainNavigation';
 import './App.css';
+import LandingPage from './pages/LandingPage';
 
 
 const App = () => {
   return (
     <Router>
-      <MainNavigation />
+      {/* <MainNavigation /> */}
       <main>
         <Switch>
           <Route path="/" exact>
+            <LandingPage/>
+          </Route>
+          <Route path="/users" exact>
             <Users />
           </Route>
-          <Route path="/:id/details" exact>
+          <Route path="/:id/details"  exact>
             <UserDetails />
           </Route>
           <Route path="/newuser" exact>
@@ -27,7 +31,7 @@ const App = () => {
           <Route path="/:id/update" exact>
             <UpdateUser />
           </Route>
-          <Redirect to="/" />
+          <Redirect to="/users" />
         </Switch>
       </main>
     </Router>

@@ -8,7 +8,7 @@ class Users extends React.Component {
     state = { users:[] }
 
     fetchUsers = () => {
-        axios.get('http://localhost:81/models')
+        axios.get('http://localhost:80/models')
               .then(response => {
                 const tempUsers = Array.from(response.data);
                 for (var j = 0; j < tempUsers.length; j++){

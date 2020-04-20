@@ -14,7 +14,7 @@ class UpdateUser extends React.Component {
     uId = this.props.match.params.id;
 
     fetchUsers = () => {
-        axios.get(`http://localhost:81/models/${this.uId}`)
+        axios.get(`http://localhost:80/models/${this.uId}`)
               .then(response => {
                 const tempUsers = Array.from(response.data);
                 for (var j = 0; j < tempUsers.length; j++){
@@ -40,7 +40,7 @@ class UpdateUser extends React.Component {
     userUpdateHandler = event => {
         event.preventDefault();
         console.log(this.state);
-        axios.put('http://localhost:81/models', {
+        axios.put('http://localhost:80/models', {
             name: this.state.users.name,
             email: this.state.users.email,
             phone: this.state.users.phone,

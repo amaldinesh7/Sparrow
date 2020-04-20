@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+
+.landing-page {
+    background-color: black;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+}
+
+.landing-page__content{
+    margin: 35vh 0;
+}
+
+.title{
+    align-content: center;
+}
+
+.title h2 {
+    color : white;
+    text-align: center;
+    font-size: 6rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    letter-spacing: 10px;
+}
+
+.google-button__div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.google-button {
+    height: 40px;
+    border: 2px solid white;
+    background: transparent;
+    outline: none;
+    color: #737373;
+    border-radius: 4rem;
+    white-space: nowrap;
+    box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.05);
+    transition-property: background-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 8px;
+    padding-bottom: 40px;
+}
+    .google-button:focus,
+    .google-button:hover {
+      border-color: white;
+      background: white;
+    }
+    
+    .google-button:active {
+      background-color: #e5e5e5;
+      box-shadow: none;
+      transition-duration: 10ms;
+    } 
+  
+      
+  .google-button__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 8px;
+    margin-top: 4px;
+    margin-left: 8px;
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+  }
+    
+  .google-button__text {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 4px 14px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto',arial,sans-serif;
+  }
