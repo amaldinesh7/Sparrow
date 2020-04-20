@@ -17,7 +17,7 @@ exports.configureRoutes = (server) => {
                 return 'Authentication failed due to: ' + request.auth.error.message;
             }
                 // return '<pre>' + JSON.stringify(request.auth.credentials, null, 4) + '</pre>';
-                return h.redirect('http://localhost:80/bell/door');
+                return h.redirect('http://localhost:80/callback');
             }
         }
     },{
