@@ -3,8 +3,10 @@ import { withRouter } from'react-router-dom';
 import axios from 'axios';
 
 import Input from '../components/shared/UIElements/Input';
+import MainNavigation from "../components/shared/Navigation/MainNavigation"
 import Button from '../components/shared/UIElements/Button';
 import './NewUser.css';
+
 
 
 class UpdateUser extends React.Component {
@@ -63,6 +65,8 @@ class UpdateUser extends React.Component {
     
     render(){
         return (
+          <React.Fragment>
+            <MainNavigation />
             <form className="user-form" onSubmit={this.userUpdateHandler}>
                 <Input id="name" type="text" label="Name" value={this.state.users.name} onChange={this.onUserInput}/>
                 <Input id="phone" type="number" label="Phone Number" value={this.state.users.phone} onChange={this.onUserInput}/>
@@ -72,6 +76,7 @@ class UpdateUser extends React.Component {
                     Update User
                 </Button>
             </form>
+          </React.Fragment>
         )
     }
     

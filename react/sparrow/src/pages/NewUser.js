@@ -5,6 +5,7 @@ import Input from '../components/shared/UIElements/Input';
 import Button from '../components/shared/UIElements/Button';
 import Modal from '../components/shared/UIElements/Modal'
 import './NewUser.css'
+import MainNavigation from '../components/shared/Navigation/MainNavigation';
 
 class NewUser extends React.Component {
     state = {name:'',phone:'',dob:'',email:'',showConfirmModal:false};
@@ -41,7 +42,7 @@ class NewUser extends React.Component {
     render(){
         return (
             <React.Fragment>
-
+                <MainNavigation/>
                 <Modal
                 show = {this.state.showConfirmModal}
                 onCancel = {this.cancelDeleteHandler}

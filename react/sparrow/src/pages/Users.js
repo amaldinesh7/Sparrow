@@ -2,6 +2,7 @@ import React from "react";
 import axios from 'axios';
 
 import UsersList from "../components/users/UsersList";
+import MainNavigation from "../components/shared/Navigation/MainNavigation"
 // import { render } from "@testing-library/react";
 
 class Users extends React.Component {
@@ -27,7 +28,10 @@ class Users extends React.Component {
 
     render(){
         return (
-             <UsersList items={this.state.users} />
+          <React.Fragment>
+            <MainNavigation />
+            <UsersList items={this.state.users} />
+          </React.Fragment>
         );
     }
     

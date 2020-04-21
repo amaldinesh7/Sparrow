@@ -5,21 +5,20 @@ import Users from './pages/Users';
 import NewUser from './pages/NewUser';
 import UserDetails from './pages/UserDetails';
 import UpdateUser from './pages/UpdateUser';
-import MainNavigation from './components/shared/Navigation/MainNavigation';
+// import MainNavigation from './components/shared/Navigation/MainNavigation';
 import './App.css';
-import LandingPage from './pages/LandingPage';
+// import LandingPage from './pages/LandingPage';
 
 
 const App = () => {
   return (
     <Router>
-      {/* <MainNavigation /> */}
       <main>
         <Switch>
-          <Route path="/" exact>
+          {/* <Route path="/" exact>
             <LandingPage/>
-          </Route>
-          <Route path="/users" exact>
+          </Route> */}
+          <Route path="/" exact>
             <Users />
           </Route>
           <Route path="/:id/details"  exact>
@@ -31,7 +30,7 @@ const App = () => {
           <Route path="/:id/update" exact>
             <UpdateUser />
           </Route>
-          <Redirect to="/users" />
+          <Redirect to="/" />
         </Switch>
       </main>
     </Router>
