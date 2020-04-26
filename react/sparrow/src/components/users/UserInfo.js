@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,useHistory} from 'react-router-dom';
 import axios from 'axios'
 
 import Card from '../shared/UIElements/Card';
@@ -20,17 +20,26 @@ const UserInfo = props => {
         setShowConfirmModal(false);
     };
 
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push("/");
+    }
+
     const confirmDeleteHandler = () => {
         axios.delete(`http://localhost:80/models/${uId}`)
           .then(function (response) {
               //Temporary Setup - Nedd to show deleted Successfully 
             setShowConfirmModal(false);
+            handleClick();
             console.log(response);
           })
           .catch(function (error) {
             console.log(error);
           });
     };
+
+    
 
     return (
         <React.Fragment>

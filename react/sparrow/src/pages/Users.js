@@ -6,7 +6,7 @@ import MainNavigation from "../components/shared/Navigation/MainNavigation"
 // import { render } from "@testing-library/react";
 
 class Users extends React.Component {
-    state = { users:[] }
+    state = { users:[] ,count:'nothing'}
 
     fetchUsers = () => {
         axios.get('http://localhost:80/models')
@@ -15,7 +15,10 @@ class Users extends React.Component {
                 for (var j = 0; j < tempUsers.length; j++){
                   tempUsers[j].id = tempUsers[j].phone;
                   }
-                this.setState({users:Array.from(tempUsers)});
+                  if(response.data.length === 0) {
+                    this.setState({count:'0'});
+                  }
+                this.setState({users:Array.from(tempUsers), count:`${tempUsers.length}`});
               })
               .catch(error => {
                 console.log(error);
@@ -30,7 +33,7 @@ class Users extends React.Component {
         return (
           <React.Fragment>
             <MainNavigation />
-            <UsersList items={this.state.users} />
+            <UsersList items={this.state.users} count={this.state.count} />
           </React.Fragment>
         );
     }

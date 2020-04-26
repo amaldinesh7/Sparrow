@@ -24,7 +24,11 @@ class App extends React.Component{
 
   render() {
     return(
-      <LandingPage />
+      <div>
+                
+      <center><img alt="Loader" src="/home/satyr/Desktop/SurveySparrow/react/sparrow/images/ao.png"></img></center>
+  
+    </div>
     )
   }
 }

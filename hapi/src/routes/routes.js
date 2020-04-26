@@ -21,7 +21,7 @@ exports.configureRoutes = (server) => {
             }
         }
     },{
-        // User Creation API
+        // login callback API -- Not Used
         method:'GET',
         path:'/callback',
         handler: function (request,h) {

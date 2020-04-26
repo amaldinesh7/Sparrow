@@ -1,11 +1,21 @@
 import React from 'react';
+import Image from '../../images/loader.svg';
+
 
 import UserItem from './UserItem';
 import Card from '../shared/UIElements/Card';
 import './UsersList.css';
 
 const UsersList = props => {
-    if (props.items.length === 0) {
+    if (props.count === 'nothing') {
+        return (
+            <div className="no-user-found loader">
+                <center><img alt="Loader" src={Image}/></center>
+            </div>
+        );
+    }
+
+    if (props.count === '0') {
         return (
             <div className="no-user-found">
                 <Card>
