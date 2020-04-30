@@ -4,6 +4,7 @@ import UserInfo from './UserInfo'
 import './UserContent.css';
 
 const UserContent = props => {
+    console.log(props.items);
     return (
         <ul className="user-content">
             {props.items.map(user => (

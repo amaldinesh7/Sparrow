@@ -2,9 +2,9 @@ const Model = require('../connect');
 
 module.exports = {
     searchUser :  (req) => {
-        var ph = req.params.id;
+        var uid = req.params.id;
        return Model.Temps.findAll({
-            where: { phone : ph }
+            where: { id : uid }
           })
         }
     }

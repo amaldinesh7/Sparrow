@@ -1,43 +1,37 @@
 import React from "react";
-import axios from 'axios';
+import { connect } from 'react-redux';
 
 import UsersList from "../components/users/UsersList";
 import MainNavigation from "../components/shared/Navigation/MainNavigation"
-// import { render } from "@testing-library/react";
+
+import { fetchUsers } from '../redux/actions'
+
 
 class Users extends React.Component {
-    state = { users:[] ,count:'nothing'}
+  state = {count : 'nothing'}
 
-    fetchUsers = () => {
-        axios.get('http://localhost:80/models')
-              .then(response => {
-                const tempUsers = Array.from(response.data);
-                for (var j = 0; j < tempUsers.length; j++){
-                  tempUsers[j].id = tempUsers[j].phone;
-                  }
-                  if(response.data.length === 0) {
-                    this.setState({count:'0'});
-                  }
-                this.setState({users:Array.from(tempUsers), count:`${tempUsers.length}`});
-              })
-              .catch(error => {
-                console.log(error);
-              });
-      };
+  // countUpdate = () => {
+  //   this.setState({count:this.props.users.length})
+  // }
 
-    componentDidMount(){
-        this.fetchUsers()
-    }
+  componentDidMount() {
+    this.props.fetchUsers();
+    // this.countUpdate();
+  }
 
-    render(){
-        return (
-          <React.Fragment>
-            <MainNavigation />
-            <UsersList items={this.state.users} count={this.state.count} />
-          </React.Fragment>
-        );
-    }
-    
+  render() {
+    // console.log(this.props.users);
+    return (
+      <React.Fragment>
+        <MainNavigation />
+        <UsersList items={this.props.users} count={this.props.users.length} />
+      </React.Fragment>
+    );
+  }
+
+}
+const mapStateToProps = (state) => {
+  return { users: state.users }
 }
 
-export default Users;
+export default connect(mapStateToProps, { fetchUsers })(Users);

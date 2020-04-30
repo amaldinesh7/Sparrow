@@ -19,8 +19,8 @@ ALTER ROLE postgres WITH PASSWORD 'pass';
 
 #Creating User Table
 
-Create table users(name varchar(50) NOT NULL,email varchar(50), phone bigint PRIMARY KEY, dob date NOT NULL);
-insert into users values('Amal','amalkdinesh@gmail.com', 9745597425, '1999-07-16');
+Create table temps(id SERIAL PRIMARY KEY, name varchar(50) NOT NULL, email varchar(50) NOT NULL, phone bigint NOT NULL, dob date NOT NULL);
+insert into temps values(DEFAULT,'Amal','amalkdinesh@gmail.com', 9745597425, '1999-07-16');
 
 
 
@@ -31,3 +31,5 @@ sudo su - postgres
 psql
 \c surveysparrow
 *table is users and postgres is user*
+
+-- for the temporary use, we are now using the temps table in surveysparrow db --drop

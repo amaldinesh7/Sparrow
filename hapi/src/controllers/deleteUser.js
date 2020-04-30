@@ -2,9 +2,9 @@ const Model = require('../connect');
 
 module.exports = {
     deleteUser : (req) => {
-        var ph = req.params.uId;
+        var uid = req.params.uId;
         return Model.Temps.destroy({
-            where: { phone : ph }
+            where: { id : uid }
           })
         }
     }

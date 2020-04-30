@@ -9,7 +9,7 @@ module.exports = {
             dob: req.payload.dob
           }, {
             where: {
-              phone: req.payload.id
+              id: req.payload.id
             }
         }).then(ans => {
             if (ans[0]){

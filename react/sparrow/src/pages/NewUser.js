@@ -1,6 +1,6 @@
 import React from 'react';
-import axios from 'axios';
 
+import usersApi from '../api/usersApi';
 import Input from '../components/shared/UIElements/Input';
 import Button from '../components/shared/UIElements/Button';
 import Modal from '../components/shared/UIElements/Modal'
@@ -12,7 +12,7 @@ class NewUser extends React.Component {
 
     userSubmitHandler = event => {
         event.preventDefault();
-        axios.post('http://localhost:80/models', {
+        usersApi.post('/models', {
             name: this.state.name,
             email: this.state.email,
             phone: this.state.phone,

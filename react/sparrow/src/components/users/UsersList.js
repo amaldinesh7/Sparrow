@@ -15,7 +15,7 @@ const UsersList = props => {
         );
     }
 
-    if (props.count === '0') {
+    if (props.count === 0) {
         return (
             <div className="no-user-found">
                 <Card>

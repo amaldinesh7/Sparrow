@@ -15,9 +15,6 @@ const App = () => {
     <Router>
       <main>
         <Switch>
-          {/* <Route path="/" exact>
-            <LandingPage/>
-          </Route> */}
           <Route path="/" exact>
             <Users />
           </Route>
