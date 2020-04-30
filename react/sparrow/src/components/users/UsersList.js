@@ -7,7 +7,7 @@ import Card from '../shared/UIElements/Card';
 import './UsersList.css';
 
 const UsersList = props => {
-    if (props.count === 'nothing') {
+    if (props.count === null) {
         return (
             <div className="no-user-found loader">
                 <center><img alt="Loader" src={Image}/></center>
@@ -15,7 +15,7 @@ const UsersList = props => {
         );
     }
 
-    if (props.count === 0) {
+    if (props.count.length === 0) {
         return (
             <div className="no-user-found">
                 <Card>
