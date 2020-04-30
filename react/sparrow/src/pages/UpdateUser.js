@@ -12,7 +12,7 @@ import './NewUser.css';
 
 class UpdateUser extends React.Component {
 
-  state = { users: {}, showConfirmModal: false }
+  state = { users: { name: '', phone: '', dob: '', email: '' }, showConfirmModal: false }
 
   uId = parseInt(this.props.match.params.id);
   tempUsers = this.props.users.filter(users => users.id === this.uId)[0];
@@ -24,7 +24,6 @@ class UpdateUser extends React.Component {
 
   onUserInput = e => {
     const { id, value } = e.target
-    // this.setState({[e.target.id]:e.target.value});  
     this.setState(prevState => ({
       users: {
         ...prevState.users,
@@ -41,6 +40,7 @@ class UpdateUser extends React.Component {
       email: this.state.users.email,
       phone: this.state.users.phone,
       dob: this.state.users.dob,
+      id: this.uId
     })
       .then(function (response) {
         console.log(response);
@@ -57,11 +57,10 @@ class UpdateUser extends React.Component {
 
 
   render() {
-    console.log(this.state.users);
     return (
       <React.Fragment>
         <MainNavigation />
-        {/* <form className="user-form" onSubmit={this.userUpdateHandler}>
+        <form className="user-form" onSubmit={this.userUpdateHandler}>
           <Input id="name" type="text" label="Name" value={this.state.users.name} onChange={this.onUserInput} />
           <Input id="phone" type="number" label="Phone Number" value={this.state.users.phone} onChange={this.onUserInput} />
           <Input id="dob" type="date" label="Date of Birth" value={this.state.users.dob} onChange={this.onUserInput} />
@@ -69,7 +68,7 @@ class UpdateUser extends React.Component {
           <Button type="submit" adduser>
             Update User
                 </Button>
-        </form> */}
+        </form>
       </React.Fragment>
     )
   }
@@ -79,6 +78,6 @@ class UpdateUser extends React.Component {
 
 const mapStateToProps = (state) => {
   return { users: state.users }
-}
+};
 
 export default connect(mapStateToProps)(withRouter(UpdateUser));

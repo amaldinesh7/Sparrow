@@ -50,6 +50,7 @@ exports.configureRoutes = (server) => {
         options:{
             validate:{
                 payload:Joi.object({
+                    id: Joi.number().required(),
                     name: Joi.string().required(),
                     phone: Joi.number().required(),
                     dob: Joi.date().required(),

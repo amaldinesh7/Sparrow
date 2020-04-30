@@ -8,23 +8,23 @@ import { fetchUsers } from '../redux/actions'
 
 
 class Users extends React.Component {
-  state = {count : 'nothing'}
+  state = { count: 'nothing' }
 
-  // countUpdate = () => {
-  //   this.setState({count:this.props.users.length})
-  // }
+  countUpdate = () => {
+    this.setState({count:this.props.users.length})
+  }
 
   componentDidMount() {
     this.props.fetchUsers();
-    // this.countUpdate();
   }
 
   render() {
-    // console.log(this.props.users);
+    // this.countUpdate();
+    console.log(this.state.count);
     return (
       <React.Fragment>
         <MainNavigation />
-        <UsersList items={this.props.users} count={this.props.users.length} />
+        <UsersList items={this.props.users} count={this.state.count} />
       </React.Fragment>
     );
   }
