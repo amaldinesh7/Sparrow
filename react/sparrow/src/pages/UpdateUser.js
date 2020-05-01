@@ -13,12 +13,12 @@ import './NewUser.css';
 
 class UpdateUser extends React.Component {
 
-  state = { users: { name: '', phone: '', dob: '', email: '' }, showConfirmModal: false, message: '', headerMessage:'' }
+  state = { users: { name: '', phone: '', dob: '', email: '' }, showConfirmModal: false, message: '', headerMessage: '', status: null }
 
   uId = parseInt(this.props.match.params.id);
   tempUsers = this.props.users.filter(users => users.id === this.uId)[0];
 
-
+  //Storing the users object in local state from redux
   setUsersState = () => {
     this.setState({ users: this.tempUsers })
   }
@@ -43,10 +43,10 @@ class UpdateUser extends React.Component {
       id: this.uId
     })
       .then((response) => {
-        this.setState({ message: "User Updated Successfully!" ,headerMessage:"Success!"});
+        this.setState({ message: "User Updated Successfully!", headerMessage: "Success!", status: true });
       })
       .catch((error) => {
-        this.setState({ message: "User Updation Failed! Please Try Again" ,headerMessage:"Failed!"});
+        this.setState({ message: "User Updation Failed! Please Try Again", headerMessage: "Failed!", status: false });
       });
   };
 
@@ -54,10 +54,14 @@ class UpdateUser extends React.Component {
     this.setState({ showConfirmModal: true });
   };
 
-  cancelDeleteHandler = () => {
+
+  closePropmtHandler = () => {
     this.setState({ showConfirmModal: false });
-    this.setState({ name: '', phone: '', dob: '', email: '' });
+    if (this.state.status) {
+      this.props.history.push("/");
+    }
   };
+
 
   componentDidMount() {
     this.setUsersState()
@@ -70,12 +74,11 @@ class UpdateUser extends React.Component {
         <MainNavigation />
         <Modal
           show={this.state.showConfirmModal}
-          onCancel={this.cancelDeleteHandler}
           header={this.state.headerMessage}
           footerClass="place-item__modal-actions"
           footer={
             <React.Fragment>
-              <Button onClick={this.cancelDeleteHandler} danger>OK</Button>
+              <Button onClick={this.closePropmtHandler} responsePrompt>OK</Button>
             </React.Fragment>
           }>
           <p> {this.state.message}</p>

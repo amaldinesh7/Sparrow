@@ -40,7 +40,7 @@ class NewUser extends React.Component {
         this.setState({ showConfirmModal: true });
     };
 
-    cancelDeleteHandler = () => {
+    closePromptHandler = () => {
         this.setState({ showConfirmModal: false });
         this.setState({ name: '', phone: '', dob: '', email: '' });
     };
@@ -51,12 +51,11 @@ class NewUser extends React.Component {
                 <MainNavigation />
                 <Modal
                     show={this.state.showConfirmModal}
-                    onCancel={this.cancelDeleteHandler}
                     header={this.state.headerMessage}
                     footerClass="place-item__modal-actions"
                     footer={
                         <React.Fragment>
-                            <Button onClick={this.cancelDeleteHandler} danger>OK</Button>
+                            <Button onClick={this.closePromptHandler} responsePrompt>OK</Button>
                         </React.Fragment>
                     }>
                     <p> {this.state.message}</p>
