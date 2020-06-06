@@ -23,7 +23,7 @@ const UserInfo = props => {
     const history = useHistory();
 
     const handleClick = () => {
-        history.push("/");
+        history.push("/users");
     }
 
     const confirmDeleteHandler = () => {

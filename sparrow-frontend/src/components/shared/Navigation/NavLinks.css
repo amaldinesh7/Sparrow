@@ -8,6 +8,7 @@
     flex-direction: column-reverse;
     justify-content: flex-end;
     align-items: center;
+    
   }
   
   .nav-links li {
@@ -42,6 +43,19 @@
     background: transparent;
     padding: .5rem;
     font: inherit;
+  }
+
+  .logout{
+    border: 2px solid crimson !important;
+    background: none !important;
+    color:white !important;
+    transition: 0.4s ease;
+  }
+
+  .logout:hover{
+    background: crimson !important;
+    color:white !important;
+    
   }
   
   .nav-links button:focus {

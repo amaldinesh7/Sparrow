@@ -7,7 +7,7 @@ import UserDetails from './pages/UserDetails';
 import UpdateUser from './pages/UpdateUser';
 // import MainNavigation from './components/shared/Navigation/MainNavigation';
 import './App.css';
-// import LandingPage from './pages/LandingPage';
+import LandingPage from './pages/LandingPage';
 
 
 const App = () => {
@@ -15,7 +15,10 @@ const App = () => {
     <Router>
       <main>
         <Switch>
-          <Route path="/" exact>
+        <Route path="/" exact>
+            <LandingPage />
+          </Route>
+          <Route path="/users" exact>
             <Users />
           </Route>
           <Route path="/:id/details"  exact>
