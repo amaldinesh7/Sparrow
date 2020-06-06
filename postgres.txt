@@ -2,6 +2,7 @@
 
 sudo su - postgres
 psql
+create database surveysparrow
 
 #Commands
 
