@@ -38,8 +38,9 @@ class LandingPage extends React.Component {
 
     onSignInClick = () => {
         this.auth.signIn().then((response) => {
-            localStorage.setItem('accessToken', [response.tc.accessToken]);
-            this.setState({accessToken:response.tc.accessToken})
+            console.log(response)
+            localStorage.setItem('accessToken', [response.wc.accessToken]);
+            this.setState({accessToken:response.wc.accessToken})
         });
 
     }
