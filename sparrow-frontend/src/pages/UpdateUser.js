@@ -58,7 +58,7 @@ class UpdateUser extends React.Component {
   closePropmtHandler = () => {
     this.setState({ showConfirmModal: false });
     if (this.state.status) {
-      this.props.history.push("/");
+      this.props.history.push("/users");
     }
   };
 
