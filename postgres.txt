@@ -17,7 +17,6 @@ create database surveysparrow
 ALTER ROLE postgres WITH PASSWORD 'pass';
 
 
-
 #Creating User Table
 
 Create table temps(id SERIAL PRIMARY KEY, name varchar(50) NOT NULL, email varchar(50) NOT NULL, phone bigint NOT NULL, dob date NOT NULL);
