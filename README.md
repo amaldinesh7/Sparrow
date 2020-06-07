@@ -7,4 +7,4 @@ In this basic app you can do the following operations:
 2. Update a user
 3. Delete a user
 
-# `Created Using [React](https://reactjs.org/), [Redux](https://redux.js.org/), [Hapi](https://hapi.dev/), [Postgres](https://www.postgresql.org/).`
+` Created Using [React](https://reactjs.org/), [Redux](https://redux.js.org/), [Hapi](https://hapi.dev/), [Postgres](https://www.postgresql.org/).`
