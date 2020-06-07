@@ -1,6 +1,6 @@
 # Sparrow-Backend
 
-Generate links for Gmail, Outlook, Yahoo or plain old ICS right from your browser.
+Creating a [Postgres](https://www.postgresql.org/) database and setting up a [Hapi](https://hapi.dev/) server
 
 ## Prerequisites
 
